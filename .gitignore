@@ -4,3 +4,5 @@ data/wishes.json.tmp
 bin/
 obj/
 .vs/
+node_modules/
+.vercel/

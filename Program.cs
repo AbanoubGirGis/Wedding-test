@@ -27,7 +27,11 @@ app.UseSession();
 app.MapPost("/api/wishes", (HttpRequest request) => WishBook.SaveAsync(request, wishesPath, wishesGate))
     .DisableAntiforgery();
 
-app.MapGet("/board", () => Results.Content(WishPages.Shell(), "text/html; charset=utf-8"));
+app.MapGet("/board", () =>
+{
+    var path = Path.Combine(app.Environment.WebRootPath, "board", "index.html");
+    return Results.File(path, "text/html; charset=utf-8");
+});
 
 app.MapGet("/api/board", async (HttpContext context) =>
 {

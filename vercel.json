@@ -1,5 +1,20 @@
 {
   "framework": null,
+  "installCommand": "npm install",
   "buildCommand": "",
-  "outputDirectory": "pages"
+  "outputDirectory": "pages",
+  "rewrites": [
+    { "source": "/board", "destination": "/board/index.html" },
+    { "source": "/board/", "destination": "/board/index.html" }
+  ],
+  "functions": {
+    "api/wishes.js": {
+      "maxDuration": 10,
+      "includeFiles": "appsettings.json"
+    },
+    "api/board.js": {
+      "maxDuration": 10,
+      "includeFiles": "appsettings.json"
+    }
+  }
 }
