@@ -1,0 +1,6 @@
+data/wishes.json
+data/wishes.json.tmp
+
+bin/
+obj/
+.vs/

@@ -1,0 +1,2 @@
+Drop wedding photos in this folder.
+Then set the matching paths in pages/js/content.js (gallery array), for example images/01.jpg.

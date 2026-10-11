@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#14312e">
+  <title>Amir &amp; Laila | Wedding Invitation</title>
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Amiri:ital,wght@0,400;0,700;1,400&family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,620;1,9..144,500;1,9..144,620&family=Outfit:wght@300;400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/site.css">
+</head>
+<body>
+  <div id="seal-screen" class="seal-screen" role="dialog" aria-modal="true" aria-labelledby="seal-hint-ar">
+    <div class="seal-panel seal-panel-top" aria-hidden="true">
+      <div class="florals florals-top"></div>
+    </div>
+    <div class="seal-panel seal-panel-bottom" aria-hidden="true">
+      <div class="florals florals-bottom"></div>
+    </div>
+    <div class="petals" aria-hidden="true">
+      <span></span><span></span><span></span><span></span><span></span>
+      <span></span><span></span><span></span><span></span><span></span>
+    </div>
+    <button id="seal-button" class="seal-button" type="button">
+      <span class="seal-hints">
+        <span id="seal-hint-ar" lang="ar" dir="rtl"></span>
+        <span id="seal-hint-en" lang="en"></span>
+      </span>
+      <span class="seal-wrap">
+        <span class="intro-stage">
+          <video id="intro-video" playsinline preload="auto">
+            <source src="video/intro-1.mp4" type="video/mp4">
+          </video>
+          <span class="intro-play" aria-hidden="true"></span>
+          <span class="intro-progress"><span id="intro-bar"></span></span>
+        </span>
+      </span>
+    </button>
+  </div>
+
+  <button id="music-button" class="music-button" type="button" hidden>
+    <span class="music-icon" aria-hidden="true"></span>
+    <span class="music-label">
+      <span lang="ar" dir="rtl">الموسيقى</span>
+      <span lang="en">Music</span>
+    </span>
+  </button>
+  <audio id="music" loop preload="none"></audio>
+
+  <main id="story">
+    <section class="hero">
+      <figure class="hero-frame">
+        <img id="hero-img" alt="Amir and Laila">
+        <figcaption class="hero-copy">
+          <p class="eyebrow">
+            <span id="eyebrow-ar" lang="ar" dir="rtl"></span>
+            <span class="dot" aria-hidden="true"></span>
+            <span id="eyebrow-en" lang="en"></span>
+          </p>
+          <div class="names">
+            <p class="name-ar" lang="ar" dir="rtl"><span id="groom-ar"></span> <span class="wa">و</span> <span id="bride-ar"></span></p>
+            <p class="name-en" lang="en"><span id="groom-en"></span> <span class="amp">&amp;</span> <span id="bride-en"></span></p>
+          </div>
+          <div class="gold-rule" aria-hidden="true"></div>
+          <p class="date-line">
+            <span id="date-ar" lang="en" dir="rtl"></span>
+            <span id="date-en" lang="en"></span>
+          </p>
+        </figcaption>
+      </figure>
+      <div class="invite-line">
+        <p id="line-ar" lang="ar" dir="rtl"></p>
+        <p id="line-en" lang="en"></p>
+      </div>
+      <p class="scroll-hint" lang="en">Scroll</p>
+    </section>
+
+    <section class="verse reveal">
+      <div class="cross" aria-hidden="true"></div>
+      <blockquote>
+        <p id="verse-ar" lang="ar" dir="rtl"></p>
+        <p id="verse-en" lang="en"></p>
+      </blockquote>
+      <p class="verse-ref">
+        <span id="verse-ref-ar" lang="ar" dir="rtl"></span>
+        <span id="verse-ref-en" lang="en"></span>
+      </p>
+      <div class="gold-rule draw" aria-hidden="true"></div>
+    </section>
+
+    <section class="countdown reveal">
+      <h2>
+        <span id="count-title-ar" lang="ar" dir="rtl"></span>
+        <span id="count-title-en" lang="en"></span>
+      </h2>
+      <div id="count-grid" class="count-grid"></div>
+      <p id="count-done" class="count-done" hidden></p>
+    </section>
+
+    <section class="schedule reveal">
+      <h2>
+        <span id="schedule-title-ar" lang="ar" dir="rtl"></span>
+        <span id="schedule-title-en" lang="en"></span>
+      </h2>
+      <ol id="schedule-list" class="timeline"></ol>
+    </section>
+
+    <section class="places reveal">
+      <h2>
+        <span id="places-title-ar" lang="ar" dir="rtl"></span>
+        <span id="places-title-en" lang="en"></span>
+      </h2>
+      <div id="venue-list" class="venue-grid"></div>
+    </section>
+
+    <section class="gallery reveal">
+      <h2>
+        <span id="gallery-title-ar" lang="ar" dir="rtl"></span>
+        <span id="gallery-title-en" lang="en"></span>
+      </h2>
+      <div id="gallery-grid" class="gallery-grid"></div>
+    </section>
+
+    <section id="wishes" class="wishes reveal">
+      <h2>
+        <span id="wishes-title-ar" lang="ar" dir="rtl"></span>
+        <span id="wishes-title-en" lang="en"></span>
+      </h2>
+      <p id="wish-thanks" class="wish-thanks" hidden>
+        <span id="wish-thanks-ar" lang="ar" dir="rtl"></span>
+        <span id="wish-thanks-en" lang="en"></span>
+      </p>
+      <form id="wish-form" class="wish-form">
+        <p id="wish-error" class="wish-error" hidden>
+          <span id="wish-error-ar" lang="ar" dir="rtl"></span>
+          <span id="wish-error-en" lang="en"></span>
+        </p>
+        <fieldset>
+          <legend>
+            <span id="wish-to-ar" lang="ar" dir="rtl"></span>
+            <span id="wish-to-en" lang="en"></span>
+          </legend>
+          <div class="wish-choices three">
+            <label class="choice">
+              <input type="radio" name="to" value="groom" required>
+              <span id="wish-groom-ar" lang="ar" dir="rtl"></span>
+              <span id="wish-groom-en" lang="en"></span>
+            </label>
+            <label class="choice">
+              <input type="radio" name="to" value="bride" required>
+              <span id="wish-bride-ar" lang="ar" dir="rtl"></span>
+              <span id="wish-bride-en" lang="en"></span>
+            </label>
+            <label class="choice">
+              <input type="radio" name="to" value="both" required>
+              <span id="wish-both-ar" lang="ar" dir="rtl"></span>
+              <span id="wish-both-en" lang="en"></span>
+            </label>
+          </div>
+        </fieldset>
+        <label class="wish-field">
+          <span id="wish-message-ar" lang="ar" dir="rtl"></span>
+          <span id="wish-message-en" lang="en"></span>
+          <textarea name="message" maxlength="2000" rows="5" dir="auto"></textarea>
+        </label>
+        <label class="wish-field">
+          <span id="wish-name-ar" lang="ar" dir="rtl"></span>
+          <span id="wish-name-en" lang="en"></span>
+          <input name="name" maxlength="80" autocomplete="name" required dir="auto">
+        </label>
+        <fieldset>
+          <legend>
+            <span id="wish-attend-ar" lang="ar" dir="rtl"></span>
+            <span id="wish-attend-en" lang="en"></span>
+          </legend>
+          <div class="wish-choices two">
+            <label class="choice">
+              <input type="radio" name="attending" value="yes" required>
+              <span id="wish-yes-ar" lang="ar" dir="rtl"></span>
+              <span id="wish-yes-en" lang="en"></span>
+            </label>
+            <label class="choice">
+              <input type="radio" name="attending" value="no" required>
+              <span id="wish-no-ar" lang="ar" dir="rtl"></span>
+              <span id="wish-no-en" lang="en"></span>
+            </label>
+          </div>
+        </fieldset>
+        <button type="submit">
+          <span id="wish-send-ar" lang="ar" dir="rtl"></span>
+          <span id="wish-send-en" lang="en"></span>
+        </button>
+      </form>
+    </section>
+
+    <section class="closing reveal">
+      <p class="closing-mark">
+        <span id="closing-mark-ar" lang="ar" dir="rtl"></span>
+        <span id="closing-mark-en" lang="en"></span>
+      </p>
+      <div class="monogram" aria-hidden="true">A<span>&amp;</span>L</div>
+      <p id="closing-ar" class="closing-ar" lang="ar" dir="rtl"></p>
+      <p id="closing-en" class="closing-en" lang="en"></p>
+    </section>
+  </main>
+
+  <div id="lightbox" class="lightbox" hidden>
+    <button id="lightbox-close" class="lightbox-close" type="button" aria-label="Close">×</button>
+    <button id="lightbox-prev" class="lightbox-nav prev" type="button" aria-label="Previous">‹</button>
+    <img id="lightbox-img" alt="">
+    <button id="lightbox-next" class="lightbox-nav next" type="button" aria-label="Next">›</button>
+  </div>
+
+  <script src="js/content.js"></script>
+  <script src="js/invitation.js"></script>
+</body>
+</html>
